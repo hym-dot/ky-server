@@ -1,4 +1,4 @@
-const boards=[
+const Board=[
     {
         id:1,
         title:"공지사항",
@@ -11,4 +11,4 @@ const boards=[
     }
 ]
 
-module.exports = boards
+module.exports = Board
