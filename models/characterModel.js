@@ -1,16 +1,26 @@
-const characters = [
-    {
-        id: 1,
-        name: "아처",
-        level: 10,
-        isOnline: true
-    },
-    {
-        id: 2,
-        name: "워리어",
-        level: 15,
-        isOnline: false
-    }
-];
+const mongoose = require('mongoose')
 
-module.exports = characters;
+
+const characterSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        level: {
+            type: Number,
+            required: true,
+        },
+        isOnline: {
+            type: Boolean,
+            required: false,
+        },
+    }, {
+    timestamps: true
+}
+)
+
+const Character = mongoose.model('Character', characterSchema)
+
+module.exports = Character;
